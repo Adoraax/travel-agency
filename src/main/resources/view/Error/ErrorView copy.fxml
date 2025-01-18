@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+
+<GridPane fx:controller="controller.Error.ErrorController" xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="150.0" prefWidth="400.0">
+<stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+  <HBox spacing="0" alignment="top_center"
+        GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <padding>
+                <Insets bottom="10.0" />
+            </padding>
+            <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" >
+            <image>
+                <Image
+                    url="image/error.png"
+                    backgroundLoading="true"
+                    />
+            </image>
+    </ImageView>
+
+    </HBox>
+        <HBox styleClass="Heading" alignment="CENTER" minHeight="60" style="-fx-border-style: solid none solid none; -fx-border-color: lightgray; -fx-border-width: 1; -fx-padding-top: 50;"
+                        GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="1">
+                        <Label text="Error" style="-fx-font-size: 18pt; -fx-font-family: Helvetica; -fx-text-fill: #168FC1; -fx-font-weight: bold"/>
+                    </HBox>
+
+        <HBox spacing="20"  styleClass="errorLabel" alignment="CENTER" minHeight="60"
+                        GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="1">
+                        <Label fx:id="errorMessage" styleClass="errorLabel"/>
+                    </HBox>
+                    
+<HBox spacing="20"  alignment="CENTER" minHeight="30"
+                        GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="1">
+                        <Label fx:id="message" />
+                    </HBox>
+
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+                        
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="NEVER"/>
+                        <RowConstraints vgrow="NEVER"/>
+                        <RowConstraints vgrow="NEVER"/>
+                        <RowConstraints vgrow="ALWAYS"/>
+                    </rowConstraints>
+                
+                    <Button fx:id="closeBtn" text="Close" maxWidth="Infinity" maxHeight="Infinity"
+                    onAction="#close" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                      
+                       
+    
+    <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="0.0" />
+  </padding>
+</GridPane>
+
+<!--
+<VBox alignment="CENTER" styleClass="background" prefHeight="250.0" prefWidth="400.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+      
+</VBox>-->

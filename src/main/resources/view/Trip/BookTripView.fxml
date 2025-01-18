@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>  
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+
+<!--
+<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+
+</VBox>
+-->
+
+<GridPane stylesheets="@../style.css" fx:controller="controller.Trip.BookTripController" xmlns:fx="http://javafx.com/fxml/1" prefHeight="200.0" prefWidth="600.0" alignment="center">
+    <!--
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+    -->
+        <HBox spacing="0" alignment="top_center"
+        GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+            <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" >
+            <image>
+                <Image
+                    url="image/trip.png"
+                    backgroundLoading="true"
+                    />
+            </image>
+    </ImageView>
+
+    </HBox>
+    
+        <HBox alignment="CENTER" minHeight="60" style="-fx-padding: 0 0 0 0; -fx-border-style: solid none solid none; -fx-border-color: lightgrey; -fx-border-width: 1; " 
+                        GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="1">
+                      
+                        <Text styleClass="textBold" text="${'Hi '+controller.agency.loggedInUser.name+ ', welcome to the Trip section'}" style="-fx-font-weight: bold; -fx-fill: #168FC1; -fx-font-size: 12pt;"/>
+                        
+                        
+                    </HBox>
+
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>    
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="ALWAYS"/>
+                    </rowConstraints>
+                    
+                    
+                <HBox alignment="center" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="1" style="-fx-padding: 10 0 0 0;">
+                    <StackPane HBox.hgrow="ALWAYS" >
+                        <GridPane alignment="BOTTOM_CENTER">
+                         <children>
+
+                            <Button fx:id="addDestinationBtn" text="Add Destination" maxWidth="Infinity" GridPane.hgrow="ALWAYS"
+                            onAction="#addDestination" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <Button fx:id="removeDestinationBtn" text="Remove Destination" maxWidth="Infinity" GridPane.hgrow="ALWAYS"
+                            onAction="#removeDestination" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <Button fx:id="addFConnectinglightBtn" text="Add Connecting Flights" maxWidth="Infinity" GridPane.hgrow="ALWAYS"
+                            onAction="#addConnectingFlight" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            <Button fx:id="viewTripBtn" text="View Trip" maxWidth="Infinity" GridPane.hgrow="ALWAYS"
+                            onAction="#viewTrip" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                            <Button fx:id="closeBtn" text="Close" maxWidth="Infinity" GridPane.hgrow="ALWAYS"
+                            onAction="#close" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                             </children>
+
+                    </GridPane>
+                    </StackPane>
+                </HBox>
+                      
+</GridPane>

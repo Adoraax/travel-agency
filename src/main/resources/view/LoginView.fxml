@@ -1,0 +1,82 @@
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<StackPane prefWidth="400.0" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.LoginController">
+  <children>
+    <StackPane>
+      <children>
+        <VBox spacing="10.0">
+          <children>
+            <GridPane alignment="CENTER"  style="-fx-border-style: solid; -fx-border-color: lightgray; -fx-border-width: 1;" >
+              <children>
+              <HBox spacing="0" alignment="CENTER"
+                  GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+                  <Label styleClass="Heading" text="Login" style="-fx-font-size: 12pt; -fx-font-family: Halvetica; -fx-text-fill: #168FC1; -fx-font-weight: bold"/>
+                  <!-- <Label styleClass="Heading" text="Login" style="-fx-font-size: 12pt; -fx-font-family: Helvetica; -fx-text-fill: #168FC1; -fx-font-weight: bold"/> -->
+              </HBox>
+               
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="20.0" prefWidth="109.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               
+              </rowConstraints>
+            </GridPane>
+            <GridPane alignment="CENTER">
+              <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                      <VBox spacing="5" alignment="CENTER_LEFT" 
+                          GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                          <Label text="Username:"/>
+                          <Label text="Password"/>
+                      </VBox>
+                  
+                      <VBox spacing="0" alignment="CENTER_RIGHT" 
+                          GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                          
+                          <!--TextField fx:id="loginTf" onTextChange="#userTyped"/>-->
+                          <TextField fx:id="loginTf" />
+                          <PasswordField fx:id="passwordPf"/>
+                      </VBox>
+                  </HBox>
+            </GridPane>
+            <GridPane>
+              <columnConstraints>
+        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+        
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"/>
+        <RowConstraints vgrow="ALWAYS"/>
+     
+    </rowConstraints>
+                
+                          <Button fx:id="loginBtn" text="Login" maxWidth="Infinity" maxHeight="Infinity"
+                          onAction="#login" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                      
+                          <Button text="Exit" maxWidth="Infinity" maxHeight="Infinity"
+                          onAction="#exit" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                      
+
+              
+            </GridPane>
+          </children>
+        </VBox>
+      </children>
+    </StackPane>
+  </children>
+  <padding>
+    <Insets bottom="0.0" left="00.0" right="00.0" top="0.0" />
+  </padding>
+   <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</StackPane>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>  
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<!--
+<VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+        
+</VBox>
+-->
+
+<GridPane stylesheets="@../style.css" fx:controller="controller.Flights.DisplayFlightsController" xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="600.0" alignment="center">
+    <!--
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+    -->
+        <HBox spacing="0" alignment="top_center"
+        GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+            <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true" >
+            <image>
+                <Image
+                    url="image/flight.png"
+                    backgroundLoading="true"
+                    />
+            </image>
+    </ImageView>
+
+    </HBox>
+    
+        <HBox alignment="CENTER" minHeight="60" style="-fx-padding: 0 0 0 0; -fx-border-style: solid none solid none; -fx-border-color: lightgrey; -fx-border-width: 1; " 
+                        GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="1">
+                      
+                        <Text styleClass="textBold" text="Filtered Flights" style="-fx-font-weight: bold; -fx-fill: #168FC1; -fx-font-size: 12pt;"/>
+                        
+                        
+                    </HBox>
+
+                    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="1" style="-fx-padding: 25 0 0 0;">
+                    <Label text="Country"> </Label>
+                    </HBox>
+
+                    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="1" prefWidth="600" HBox.hgrow="ALWAYS" style="-fx-padding: 10 0 0 0;">
+                    <TextField fx:id="flightsFilterTf" HBox.hgrow="ALWAYS"> </TextField> <!--onAction="#filterFlights" -->
+                    </HBox>
+
+                    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" prefWidth="600" HBox.hgrow="ALWAYS" style="-fx-padding: 10 0 0 0;">
+                        <StackPane HBox.hgrow="ALWAYS" >
+                        <GridPane alignment="center">
+                            <columnConstraints>
+        <ColumnConstraints fillWidth="TRUE" hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+                        <TableView fx:id="flightsTv" prefHeight="700.0" prefWidth="600.0" items="${controller.flights}" maxWidth="Infinity" GridPane.hgrow="ALWAYS">
+                             <placeholder>
+                                <Label text="No Flights"/>
+                            </placeholder>
+                            <columns>
+                                <TableColumn text="Airline" prefWidth="20.0">  
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="airline"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                    
+                                <TableColumn text="Flight Number" prefWidth="20.0">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="flightNo"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn text="Takeoff Country" prefWidth="20.0">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="takeoff"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            
+                                <TableColumn text="Landing Country" prefWidth="20.0">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="landing"/>
+                                    </cellValueFactory>     
+                                </TableColumn>                           
+                            
+                                <TableColumn text="Cost"> 
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="cost"/>
+                                    </cellValueFactory>   
+                                </TableColumn>                             
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+
+                        </GridPane>
+                        </StackPane>
+                    </HBox>
+
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>    
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="ALWAYS"/>
+                    </rowConstraints>
+                    
+                    
+                <HBox alignment="center" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="1" style="-fx-padding: 10 0 0 0;">
+                    <StackPane HBox.hgrow="ALWAYS" >
+                        <GridPane alignment="BOTTOM_CENTER">
+                         <children>
+                            <Button fx:id="closeBtn" text="Close" maxWidth="Infinity" GridPane.hgrow="ALWAYS"
+                            onAction="#close" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                             </children>
+
+                    </GridPane>
+                    </StackPane>
+                </HBox>
+                      
+</GridPane>

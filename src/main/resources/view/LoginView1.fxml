@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+
+
+<!--
+<VBox fx:controller="controller.LoginController" alignment="center" styleClass="background" prefHeight="100.0" prefWidth="400.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+        <Separator/>
+
+        <Label text="User Name:"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+ 
+    <TextField fx:id="loginTf" 
+        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+ 
+    <Label text="Password:"
+        GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+ 
+    <PasswordField fx:id="passwordPf" 
+        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+<HBox spacing="10" alignment="bottom_right" 
+        GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Sign In"     
+        onAction="#login"/>
+</HBox>
+
+        <stylesheets>
+            <URL value="@style.css"/>
+        </stylesheets>
+</VBox>
+
+
+
+
+-->
+
+
+<GridPane fx:controller="controller.LoginController" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" hgap="0" vgap="0" styleClass="background" prefHeight="200.0" prefWidth="400.0">
+
+<Label styleClass="Heading" text="Login"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<!--
+    <HBox spacing="0" style="-fx-border-width: 1; -fx-border-style: solid; -fx-border-color: grey" alignment="CENTER"  styleClass="Heading"
+        GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <Label styleClass="Heading" text="Login"/>
+    </HBox>
+    -->
+    <!--
+    <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-width: 1;" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: lightgray; -fx-border-width: 1;" />
+         </children>
+</StackPane>
+-->
+    <!--
+     <HBox spacing="10" alignment="CENTER"  styleClass="Heading"
+        GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+       <Separator orientation="HORIZONTAL" />
+       <Line layoutX="50.0" layoutY="50.0" endX="100" />
+
+    </HBox>
+-->
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+        <VBox spacing="10" alignment="CENTER_LEFT" 
+            GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            <Label text="Username:"/>
+            <Label text="Password:"/>
+        </VBox>
+    
+        <VBox spacing="10" alignment="CENTER_RIGHT" 
+            GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            
+            <TextField fx:id="loginTf"/>
+            <PasswordField fx:id="passwordPf"/>
+        </VBox>
+    </HBox>
+        
+    <HBox spacing="10" alignment="BOTTOM_CENTER" styleClass="Button" 
+        GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2">
+        <VBox spacing="10" alignment="BOTTOM_LEFT"
+            GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            <Button text="Login"
+            onAction="#login"/>
+        </VBox>
+        <VBox spacing="10" alignment="BOTTOM_LEFT"
+            GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            <Button text="Exit" 
+            onAction="#exit"/>
+        </VBox>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</GridPane>
